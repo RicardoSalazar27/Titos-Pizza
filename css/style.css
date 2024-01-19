@@ -1,0 +1,722 @@
+@import url('https://fonts.cdnfonts.com/css/berlin-sans-fb-demi');
+@import url('https://fonts.cdnfonts.com/css/berlin-sans-fb');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@600&family=Rubik:wght@700&display=swap');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/details-more.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/pin.css');
+/* IMPORTA LAS TIPOGRAFIAS E ICONOS */
+
+* {
+	padding: 0px;
+	margin: 0px;
+	/* REINICIA LOS VALORES POR DEFECTO DEL NAVEGADOR */
+}
+
+:root {
+	--red: #ff3838;
+	--white: #ffffff;
+	--black: #000000;
+  --colorFondo: #111111;
+  --colorPrimario: #ffc700;
+  --colorSecundario: #FFFFFF;
+  --colorTerciario: #a50000;
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 900px;
+  /* VARIABLES GLOBALES DEL DOCUMENTO */
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--colorFondo) !important;
+  /*background-image: url("/assets/Fondo.png");*/
+  background-position-x: center;
+  background-size: contain;
+  color:#FFFFFF !important;
+  font-family: 'Rubik', sans-serif !important;
+}
+
+@font-face {
+  font-family: "Friday Beach";
+  src: url("/assets/Friday.ttf");
+
+  /*Agrega una fuente personalizada de un directorio local*/
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #FFFFFF !important;
+}
+
+#backtotop {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#backtotop::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#backtotop:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#backtotop:active {
+  background-color: #555;
+}
+#backtotop.show {
+  opacity: 1;
+  visibility: visible;
+}
+/*-------------------------------*/
+/* ESTILOS DEL MENU DE NAVEGACION*/
+/*-------------------------------*/
+
+.contenido{
+  overflow: auto;
+}
+
+.navegacion {
+	background-color: transparent;
+	padding: 30px 10px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	max-width: 1366px;
+	z-index: 99;
+  font-family: 'Rubik', sans-serif;
+}
+
+.navegacion a {
+	float: left;
+	color: var(--white);
+	text-align: center;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 25px;
+	padding: 12px;
+}
+
+.navegacion__navegacion-list a:hover {
+	color: var(--red);
+}
+
+.navegacion__navegacion-list a.active {
+	color: var(--red);
+}
+
+.navegacion__navegacion-list a {
+	transition: color 0.5s ease;
+}
+
+.navegacion .navegacion__icon {
+	display: none;
+}
+.navegacion ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navegacion li{
+  list-style: none;
+}
+
+/*---------------------------------------*/
+/* FIN DE ESTILOS DEL MENU DE NAVEGACION */
+/*---------------------------------------*/
+
+
+/*----------------------*/
+/* ESTILOS DEL CARRUSEL */
+/*----------------------*/
+
+.slide-container {
+	position: relative;
+	height: 90%;
+}
+
+.slide-container__slide-item {
+	display: none;
+}
+
+
+.slide-container__bgimg {
+	height: 100%;
+	position: relative;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.slide-container__bgimg::after {
+	content: '\A';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.68);
+}
+
+
+
+.slide-container__dot {
+	cursor: pointer;
+	height: 10px;
+	width: 10px;
+	margin: 0 2px;
+	background-color: var(--white);
+	border-radius: 5px;
+	display: inline-block;
+	transition: background-color 0.6s ease, height 0.6s;
+}
+
+.slide-container__slide-control {
+	position: absolute;
+	left: 30px;
+	top: 50%;
+	width: 10px;
+	text-align: center;
+}
+
+.slide-container__dot:hover {
+	background-color: var(--red);
+}
+
+.slide-container__dot.active {
+	background-color: var(--red);
+	height: 60px;
+}
+
+/* ANIMACION */
+
+
+.slide-container__fx {
+	animation-name: fade ;
+	animation-duration: 1.0s ;
+	-webkit-animation-name: fade ;
+	-webkit-animation-duration: 1.0s ;
+}
+
+@keyframes slide-container__fx {
+	from {
+		opacity: .4
+	} to {
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes slide-container__fx {
+	from {
+		opacity: .4
+	} to {
+		opacity: 1
+	}
+}
+
+/*-----------------------------*/
+/* FIN DE ESTILOS DEL CARRUSEL */
+/*-----------------------------*/
+
+/*-------------------------------*/
+/* ESTILOS DE LA SECCION ORDENAR */
+/*-------------------------------*/
+
+
+.location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location h1{
+  font-family: 'Berlin Sans FB Demi', sans-serif;
+  font-size: 40px;
+  color: #000;
+}
+
+.location__img{
+  width: 340px;
+  position: absolute;
+  transform: translate(534px, -125px);
+}
+
+.location__location-container{
+  background-color: var(--colorPrimario);
+  width: 1200px;
+  height: 240px;
+  transform: translateY(-133px);
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+  padding-top: 32px;
+}
+
+.location__box {
+  display: flex;
+  align-items: center;
+}
+
+.location__box-search{
+  border-radius: 50px;
+  padding: 10px;
+  width: 374px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location__box-button{
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: -40px;
+}
+
+
+/*--------------------------------------*/
+/* FIN DE ESTILOS DE LA SECCION ORDENAR */
+/*--------------------------------------*/
+
+/*-------------------------------*/
+/* ESTILOS DE LA PAGINA PRINCIPAL*/
+/*-------------------------------*/
+.header{
+  background-image: url("/assets/Decorator2.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.header__subheader{
+  margin-top: 168px;
+}
+.header__img{
+  width: 528px;
+}
+.header__slogan {
+  font-family: "Friday Beach", serif;
+}
+.header__button {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Berlin Sans FB Demi', sans-serif !important;
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 23px !important;
+  background: var(--colorPrimario);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 20px !important;
+  width: 95%;
+  height: 139px;
+  justify-content: flex-end;
+}
+.header__button:hover {
+  background: #b5941c;
+  color: var(--white);
+}
+.header__button:active {
+  transform: scale(0.95);
+}
+.header__button{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.header__button-text{
+  width: 60%;
+}
+
+#combos{
+  background-image: url(/assets/Combo.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 45%;
+}
+
+#tamaños{
+  background-image: url(/assets/Tamaños.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 55%;
+}
+
+#extras{
+  background-image: url(/assets/Extras.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 45%;
+}
+
+/*--------------------------------------*/
+/* FIN DE ESTILOS DE LA PAGINA PRINCIPAL*/
+/*--------------------------------------*/
+
+
+/*---------------------------------*/
+/* ESTILOS DE LAS TARJETAS DEL MENU*/
+/*---------------------------------*/
+
+.menu-header{
+  display: flex;
+  justify-content: center;
+  background-color: var(--white);
+}
+.menu-header__title{
+  font-family: 'Rubik', sans-serif;
+  font-size: 30px;
+  margin-top: 40px;
+  color: var(--colorPrimario);
+}
+
+.menu-container{
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+  background-color: var(--white);
+}
+
+.menu-container__menu-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 80%;
+}
+
+@media(min-width: 540px){
+  .menu-container__menu-grid{
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .menu-container__menu-grid{
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+.menu-card{
+  list-style: none;
+  position: relative;
+  width: 277px;
+  height: 353px;
+}
+
+.menu-card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.menu-card__background{
+  background-size: 90%;
+  background-position: left bottom;
+  background-color: #ffc700;
+  background-repeat: no-repeat;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(78%);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.menu-card:hover .menu-card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.menu-container__menu-grid:hover > .menu-card:not(:hover) .menu-card__background{
+  filter: brightness(0.5) blur(20px);
+}
+
+.menu-card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.menu-card__heading{
+  color: var(--text-lighter);
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  text-align: center;
+}
+
+/*--------------------------------------*/
+/* FIN ESTILOS DE LAS TARJETAS DEL MENU */
+/*--------------------------------------*/
+
+
+/*-------------------------------*/
+/* ESTILOS DE LA SECCION DE DIDI */
+/*-------------------------------*/
+
+.didi-header{
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.didi-header h1{
+  font-family: 'Rubik', sans-serif;
+  font-size: 30px;
+  color: var(--colorPrimario);
+}
+
+
+.didi-container {
+  display: flex;
+  justify-content: center;
+}
+
+.didi-container__bg {
+  background-image: url("/assets/Didi.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 710px;
+  width: 85%;
+}
+
+.didi-info{
+  background: #a50000;
+  width: 400px;
+  height: 294px;
+  float: right;
+  margin-right: 15%;
+  transform: translateY(474px);
+  text-align: center;
+}
+
+.didi-info__title {
+  font-family: 'Rubik', sans-serif;
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+.didi-info__text{
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+
+}
+
+.didi-info__playstore{
+  width: 200px;
+}
+
+/*-----------------------------------*/
+/* FIN ESTILOS DE LA SECCION DE DIDI */
+/*-----------------------------------*/
+
+
+/*--------------------*/
+/* ESTILOS DEl FOOTER */
+/*--------------------*/
+footer{
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url("/assets/titospie.svg");
+    background-size: cover;
+    margin-top: 120px;
+}
+
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.footer-container__box{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+
+.footer-container__company{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--black);
+    font-size: 18px;
+}
+
+.footer-container__box h2{
+    margin-bottom: 30px;
+    color: var(--colorFondo);
+    font-weight: 700;
+}
+
+.footer-container__box a{
+    margin-top: 10px;
+    font-family: 'Berlin Sans FB Demi', sans-serif;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.footer-container__box a:hover{
+    opacity: 0.8;
+}
+
+.footer-container__box a .fab{
+    font-size: 20px;
+}
+
+.footer-copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.footer-copyright p{
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+
+.footer-copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+
+/*---------------------------*/
+/* FIN DE ESTILOS DEl FOOTER */
+/*---------------------------*/
+
+/*-----------------*/
+/*-----------------*/
+/*-----------------*/
+
+/*ESTILOS VERSION MOVIL*/
+@media screen and (max-width: 600px) {
+
+/*NAVEGACION MOVIL*/
+  .navegacion {
+		padding: 10px;
+	}
+	.navegacion .navegacion__menu {
+		display: none;
+	}
+	.navegacion .navegacion__icon {
+		display: block;
+		position: absolute;
+		top: 13px;
+		right: 13px;
+	}
+	.navegacion.show {
+		background: var(--black);
+	}
+	.navegacion.show .navegacion__menu {
+		display: block;
+		width: 100%;
+	}
+	.navegacion.show .navegacion__menu a {
+		width: 100%;
+	}
+
+  /*CARRUSEL*/
+  .slide-container{
+    height: 70%;
+  }
+
+  /*ORDEN*/
+  .order__order-container{
+    transform: translateY(0);
+  }
+
+  .order__img{
+    display: none;
+}
+  
+  /*CABECERA*/
+
+  .header{
+    background-size: 40%;
+  }
+  
+  .header__img{
+    width: 80%;
+  }
+  button{
+    width: 100%;
+  }
+
+  .header__button-text {
+    width: 142px;
+  }
+
+  #combos{
+    background-position: left;
+    background-size: 124px;
+  }
+  #tamaños{
+    background-position: left;
+    background-size: 155px;
+  }
+  #extras{
+    background-position: left;
+    background-size: 160px;
+  }
+  /*DIDI*/
+  .didi-container__bg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+  
+  .didi-info{
+  background: #a50000;
+  width: 85%;
+  height: 294px;
+  margin-right: 0;
+  transform: translateY(274px);
+  float: none;
+  text-align: center;
+}
+}

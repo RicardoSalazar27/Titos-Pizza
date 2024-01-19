@@ -1,0 +1,429 @@
+@import url('https://fonts.cdnfonts.com/css/berlin-sans-fb-demi');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@600&family=Rubik:wght@700&display=swap');
+@import url('https://css.gg/details-more.css');
+
+* {
+	padding: 0px;
+	margin: 0px;
+	/* es para sacar los valores predeterminados del navegador */
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #111111 !important;
+  background-position-x: center;
+  background-size: contain;
+  color:#FFFFFF !important;
+  font-family: 'Rubik', sans-serif !important;
+}
+
+:root {
+	--red: #ff3838;
+	--white: #ffffff;
+	--black: #000000;
+  --colorFondo: #111111;
+  --colorPrimario: #ffc700;
+  --colorSecundario: #FFFFFF;
+  --colorTerciario: #a50000;
+  /* VARIABLES GLOBALES DEL DOCUMENTO */
+}
+
+@font-face {
+  font-family: "Friday Beach";
+  src: url("assets/Friday.ttf");
+
+  /*Agrega una fuente personalizada de un directorio local*/
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #FFFFFF !important;
+}
+
+ h1{
+  padding: 20px;
+  color:  #ffc700;
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Berlin Sans FB Demi', sans-serif;
+  
+}
+
+#backtotop {
+  display: inline-block;
+  background-color: #ff0000;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#backtotop::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#backtotop:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#backtotop:active {
+  background-color: #555;
+}
+#backtotop.show {
+  opacity: 1;
+  visibility: visible;
+}
+/*-------------------------------*/
+/* ESTILOS DEL MENU DE NAVEGACION*/
+/*-------------------------------*/
+
+.navegacion {
+	background-color:var(--colorFondo);
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	max-width: 1366px;
+	z-index: 99;
+    font-family: 'Rubik', sans-serif;
+    
+}
+
+.navegacion a {
+	float: left;
+	color: var(--white);
+	text-align: center;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 25px;
+	padding: 25px 15px;    
+    width: 180px;
+
+}
+
+.navegacion__navegacion-list a:hover {
+	color: var(--red);
+}
+
+.navegacion__navegacion-list a.active {
+	color: var(--red);
+}
+
+.navegacion__navegacion-list a {
+	transition: color 0.5s ease;
+}
+
+.navegacion .navegacion__icon {
+	display: none;
+}
+.navegacion ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navegacion li{
+  list-style: none;
+  
+}
+
+/*---------------------------------------*/
+/* FIN DE ESTILOS DEL MENU DE NAVEGACION */
+/*---------------------------------------*/
+
+/*contenido*/
+.menu-title{
+  margin-top: 12%;
+  
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.barra{
+  border:none ;
+  height: 5px;
+  background-color:var(--colorPrimario);
+  text-align: center ;
+
+}
+
+.menu-selector{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--spacing-xxl) var(--spacing-l);
+
+}
+
+.menu-selector__grid{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 40%;
+
+}
+@media(min-width: 540px){
+  .menu-selector__grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .menu-selector__grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+.menu-selector__container{
+  height: 80%;
+  padding-top: 10%;
+  padding-right: 10%;
+  padding-bottom: 0%;
+  padding-left: 10%;
+  margin: 0% 5% 5% 5%;
+  display: flex;
+  justify-content: center;
+}
+button {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Berlin Sans FB Demi', sans-serif !important;
+  transition: all .2s;
+  padding: 10px 10px;
+  border-radius: 100px !important;
+  background: var(--colorPrimario);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 18px !important;
+  width: 500px;/**/
+  height: 42px;
+  justify-content: center;
+}
+button:hover {
+  background: #b5941c;
+  color: var(--white);
+}
+button:active {
+  transform: scale(0.95);
+}
+
+.button--active{
+  background: #b5941c;
+  color: var(--white);
+}
+
+.menu-section {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.menu-section__menu-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 80%;
+}
+
+@media(min-width: 540px){
+  .menu-section__menu-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .menu-section__menu-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.menu-container {
+  height: 80%;
+  padding-top: 10%;
+  padding-right: 10%;
+  padding-bottom: 0%;
+  padding-left: 10%;
+  margin: 0% 5% 5% 5%;
+
+}
+
+.menu-container__menu-card { 
+  list-style: none;
+  position: relative;
+  border: var(--colorPrimario) solid 5px;/*borde recuadro*/
+
+
+}
+.menu-container__menu-card:before{
+  content: '';
+  display: block;
+  width: 100%;
+}
+
+.menu-container__nombre{ /* Texto nombre pizza */
+  color: black;
+  font-size: 14px;
+  font-family: 'Berlin Sans FB Demi', sans-serif;
+  text-align: center;
+  background-color:var(--colorPrimario);
+  border: var(--colorPrimario) solid 8px;
+}
+
+.menu-container__contenido{  /* Texto contenido */
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Berlin Sans FB Demi', sans-serif;
+  border:  5px solid #00000000;
+
+}
+
+
+.menu-container__img img{
+  max-width: 95%; 
+  border:5px solid #00000000;;
+}
+
+
+/*--------------------*/
+/* ESTILOS DEl FOOTER */
+/*--------------------*/
+footer{
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url("assets/titospie.svg");
+    background-size: cover;
+    margin-top: 120px;
+}
+
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.footer-container__box{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+
+.footer-container__company{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--black);
+    font-size: 18px;
+}
+
+.footer-container__box h2{
+    margin-bottom: 30px;
+    color: var(--colorFondo);
+    font-weight: 700;
+}
+
+.footer-container__box a{
+    margin-top: 10px;
+    font-family: 'Berlin Sans FB Demi', sans-serif;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.footer-container__box a:hover{
+    opacity: 0.8;
+}
+
+.footer-container__box a .fab{
+    font-size: 20px;
+}
+
+.footer-copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.footer-copyright p{
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+
+.footer-copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+
+/*---------------------------*/
+/* FIN DE ESTILOS DEl FOOTER */
+/*---------------------------*/
+
+@media screen and (max-width: 600px) {
+  /*NAVEGACION MOVIL*/
+  .navegacion {
+		padding: 10px;
+	}
+	.navegacion .navegacion__menu {
+		display: none;
+	}
+	.navegacion .navegacion__icon {
+		display: block;
+		position: absolute;
+		top: 13px;
+		right: 13px;
+	}
+	.navegacion.show {
+		background: var(--black);
+	}
+	.navegacion.show .navegacion__menu {
+		display: block;
+		width: 100%;
+	}
+	.navegacion.show .navegacion__menu a {
+		width: 100%;
+	}
+  
+  .container{
+    box-sizing: border-box;
+    float: left;
+    width: 21%;
+    padding: 0;
+    margin: 0% 2% 2% 2%;
+  }
+
+  .contenido{
+  font-size: 10px;
+}
+}

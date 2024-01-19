@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style-menu.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="assets/Logo.png">
+  <title>Tito's Pizzeria - Menu</title>
+
+  <link href='https://css.gg/details-more.css' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <a id="backtotop"></a>
+  <header>
+    <div id="navegacion-top" class="navegacion">
+      <ul class="navegacion__navegacion-list navegacion__menu">
+        <li>
+          <a href="https://titos-pizza-web.rewishere.repl.co/" class="active">INICIO</a>
+        </li>
+        <li>
+          <a href="sucursales.html">SUCURSALES</a>
+        </li>
+        <li>
+          <a href="https://titos-pizza-web.rewishere.repl.co/"><img src="assets/Logo.png" alt="Tito's Pizza Logo"></a>
+        </li>
+        <li>
+          <a href="menu.html">MENU</a>
+        </li>
+        <li>
+          <a href="nosotros.html">NOSOTROS</a>
+        </li>
+      </ul>
+      <div class="navegacion__navegacion-list">
+        <a href="javascript:void(0);" class="navegacion__icon" onclick="showMenu()">
+          <i class="gg-details-more"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <div class="menu-title">
+    <h1>MENÚ</h1>
+    <hr class="barra">
+  </div>
+
+  <div class="menu-selector">
+    <div class="menu-selector__grid">
+      <div class="menu-selector__container">
+        <button class="menu-selector__button button--active">
+          <span class="menu-selector__button-text">PIZZAS</span>
+        </button>
+      </div>
+      <div class="menu-selector__container">
+        <button class="menu-selector__button" onclick="toCombos()">
+          <span class="menu-selector__button-text">COMBOS Y EXTRAS</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <section class="menu-section">
+
+    <div class="menu-section__menu-grid">
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>TITO'S ESPECIAL</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Peperoni, jamon, tocino, pimineta, cebolla morada</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Titos especial.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>PIZZA CASERA</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Peperoni, jamon, tocino, longaniza y salchicha</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Casera.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>CARNES FRIAS</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Peperoni, jamon, tocino y chorizo</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Carnes frias.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>MEXICANA</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Base de frigol, tocino, chorizo, cebolla y jalapeños</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Mexicana.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>DIABLA</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Peperoni, chorizo y chile de arbol</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Diabla.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>HAWAIANA</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Jamon, piña y queso</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Hawaina.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>PEPERONI</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Extra de peperoni y extra de queso</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Peperoni.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>VEGETARIANA</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Tomate, pimiento, cebolla, aceitunas y champiñones</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Vegetariana.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>QUESOS</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Mozzarela, americano y manchego</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Quesos.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>PASTOR</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Carne al pastor, cebolla morada y piña</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Pastor.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>EL CALZZONE</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Vegetales o ingredientes a elegir</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Pizza-Free-PNG-Image.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>LA MARGARITA</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Salsa de tomate, queso mozzarela, rodajas de tomate y albahaca fresca</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Pizza-Free-PNG-Image.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>BONELESS</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Boneless con peperoni</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Boneless con peperoni.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>CORAZON</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Pizza de dos especialidades en forma de corazon</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Corazon.png" </figure>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-container__menu-card">
+          <div class="menu-container__nombre">
+            <h2>FOCACCIA</h2>
+          </div>
+          <div class="menu-container__contenido">
+            <p>Peperoni, jamon, tocino, pimineta, cebolla morada, champiñon y aceitunas negras</p>
+          </div>
+          <figure class="menu-container__img">
+            <img src="assets/Focaccia.png" </figure>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- AQUI EMPIEZA EL FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-container__box">
+        <div class="footer-container__logo">
+          <img src="assets/Logo.png" alt="">
+        </div>
+        <div class="footer-container__company">
+          <p>© 2022 Tito's Pizza. Todos los derechos reservados.</p>
+        </div>
+      </div>
+
+      <div class="footer-container__box">
+        <h2>Enlaces</h2>
+        <a href="#">Sucursales</a>
+        <a href="#">Menu</a>
+        <a href="#">Nosotros</a>
+      </div>
+
+      <div class="footer-container__box">
+        <h2>Redes Sociales</h2>
+        <a href="https://m.facebook.com/profile.php?id=100057658321392"> <i class="fab fa-facebook-square"></i>
+          Facebook</a>
+        <a href="https://wa.me/527821009428"><i class="fa-brands fa-whatsapp"></i></i> WhatsApp</a>
+        <a href="https://www.instagram.com/titospizzeria27/"><i class="fab fa-instagram-square"></i> Instagram</a>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <hr>
+      <p>Diseñado y Programado por <b>Axolotl Digital Studios</b></p>
+    </div>
+  </footer>
+
+  <!-- AQUI TERMINA EL FOOTER -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+
+</html>
